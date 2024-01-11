@@ -1,170 +1,93 @@
+![Alt text](image-1.png)
+
+# Salon and Beauty Marketplace Website
+
+Welcome to our Salon and Beauty Marketplace website built with Next.js! This
+platform offers a seamless experience for users to explore services, schedule
+appointments, and connect with beauty professionals. Salon owners and
+administrators can efficiently manage services, schedules, and user interactions
+through the dashboard.
+
+## Preview website : https://salon-shop-blond.vercel.app/
+
 ## Table of Contents
 
-- [How to run](#how-to-run)
-- [Editor Setup](#editor-setup)
-  - [Plugins](#plugins)
-  - [Settings](#settings)
-  - [Set Line Breaks](#set-line-breaks)
-- [Linting Setup](#linting-setup)
-  - [Install Dev Dependencies](#install-dev-dependencies)
-  - [Create Linting Configuration file manually](#create-linting-configuration-file-manually)
-- [Contact](#contact)
+1. [Features](#features)
+2. [Prerequisites](#prerequisites)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Admin Dashboard](#admin-dashboard)
+6. [Contributing](#contributing)
+7. [License](#license)
 
-<!-- HOW TO RUN -->
+## Features
 
-## How to run
+- **User Interface:**
+     - Home Page: Introduction to our services and user-friendly navigation.
+     - Services Page: Explore a wide range of beauty and salon services.
+     - Service Details Page: Detailed information about each service.
+     - User Authentication: Secure login and signup functionalities.
+     - Appointment Booking: Users can confirm and manage their bookings.
+- **Admin Dashboard:**
+     - Service Management: Add, edit, and remove services and categories.
+     - Schedule Management: Set available time slots and manage appointments.
+     - Blog Management: Publish and manage blog posts.
+     - User Management: View and manage user appointments.
 
-Please follow the below instructions to run this project in your computer:
+## Prerequisites
 
-1. Clone this repository
-   ```sh
-   git clone https://github.com/meXuvo/reactjs_starter
-   ```
-2. Change directory
-   ```sh
-   cd react
-   ```
-3. Run
-   ```sh
-   yarn
-   ```
-4. yarn start
+Before you begin, ensure you have met the following requirements:
 
-<!-- Editor Setup -->
+- Node.js installed on your local machine.
+- Salon and Beauty Marketplace API keys (for integrating external services, if
+  applicable).
 
-## Editor Setup
+## Installation
 
-You can use any editor but as I personally prefer VS Code. I will give some instructions about how I prefer VS code to be setup for React applications.
+1. Clone the repository:
 
-### Plugins
+      ```bash
+      git clone [repository URL]
+      cd salon-beauty-marketplace
+      ```
 
-You need to install the below plugins:
+2. Install dependencies:
 
-- ESLint by Dirk Baeumer
-- Prettier - Code formatter by Prettier
+      ```bash
+      npm install
+      ```
 
-### Settings
+3. Set up environment variables:
 
-Follow the below settings for VS Code -
+      Create a `.env.local` file in the root directory and add the necessary
+      environment variables (e.g., API keys, database connection details).
 
-1. Create a new folder called ".vscode" inside the project root folder
-2. Create a new file called "settings.json" inside that folder.
-3. Paste the below json in the newly created settings.json file and save the file.
+## Usage
 
-```json
-{
-  // Theme
-  "workbench.colorTheme": "Dracula", //anythig as your favorite
+To start the development server, run:
 
-  // config related to code formatting
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "[javascript]": {
-    "editor.formatOnSave": false,
-    "editor.defaultFormatter": null
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": false,
-    "editor.defaultFormatter": null
-  },
-  "javascript.validate.enable": false, //disable all built-in syntax checking
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.tslint": true,
-    "source.organizeImports": true
-  },
-  "eslint.alwaysShowStatus": true,
-  // emmet
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  }
-}
+```bash
+npm run dev
 ```
 
-If you followed all previous steps, the theme should change and your editor should be ready.
+Access the website at `http://localhost:3000`.
 
-## Linting Setup
+## Admin Dashboard
 
-In order to lint and format your React project automatically according to popular airbnb style guide, I recommend you to follow the instructions below.
+The admin dashboard provides a centralized platform for managing the salon and
+beauty marketplace. Access the dashboard at `/admin` after logging in as an
+admin user.
 
-### Install Dev Dependencies
+## Contributing
 
-```sh
-yarn add -D prettier
-yarn add -D babel-eslint
-npx install-peerdeps --dev eslint-config-airbnb
-yarn add -D eslint-config-prettier eslint-plugin-prettier
-```
+We welcome contributions from the community! To contribute to the project,
+follow these steps:
 
-or You can also add a new script in the scripts section like below to install everything with a single command:
+1. Fork the repository.
+2. Create a new branch for your feature: `git checkout -b feature-name`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature-name`
+5. Submit a pull request.
 
-```json
-scripts: {
-    "lint": "yarn add -D prettier@2.4.1 && yarn add -D eslint@7.11.0 && yarn add -D babel-eslint@10.1.0 && npx install-peerdeps --dev eslint-config-airbnb@18.2.1 && yarn add -D eslint-config-prettier@8.3.0 eslint-plugin-prettier@4.0.0"
-}
-```
+Please make sure to update tests and documentation as appropriate.
 
-and then simply run the below command in the terminal -
-
-```sh
-yarn lint #or 'npm run lint'
-```
-
-### Create Linting Configuration file manually
-
-Create a `.eslintrc` file in the project root and enter the below contents:
-
-```json
-{
-  "extends": [
-    "airbnb",
-    "airbnb/hooks",
-    "eslint:recommended",
-    "prettier",
-    "plugin:jsx-a11y/recommended"
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 8
-  },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true,
-    "jest": true
-  },
-  "rules": {
-    "react/react-in-jsx-scope": 0,
-    "react-hooks/rules-of-hooks": "error",
-    "no-console": 0,
-    "react/state-in-constructor": 0,
-    "indent": 0,
-    "linebreak-style": 0,
-    "react/prop-types": 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".js", ".jsx"]
-      }
-    ]
-    // "prettier/prettier": [
-    //   "error",
-    //   {
-    //     "trailingComma": "es5",
-    //     "singleQuote": true,
-    //     "printWidth": 100,
-    //     "tabWidth": 4,
-    //     "semi": true,
-    //     "endOfLine": "auto"
-    //   }
-    // ]
-  },
-  "plugins": ["prettier", "react", "react-hooks"]
-}
-```
-
-## Credits
-
-Made by [meXuvo](http://www.mexuvo.com/)
