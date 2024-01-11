@@ -1,10 +1,7 @@
 "use client";
-import useAuthCheck from "@/hooks/useAuthCheck";
 import store from "@/redux/Store";
 import UserRole from "@/types/UserRole";
 import { checkUserAuthenticationFromCLientSide } from "@/utils/auth";
-import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { Provider } from "react-redux";
